@@ -57,10 +57,10 @@ async function displayCart() {
         changeQuantity();
         deleteItem();
       }
-    }
-  }
-  // API Call To Get Products
-  async function getProductById(productId) {
+     }
+   }
+    // API Call To Get Products
+    async function getProductById(productId) {
     return fetch("http://localhost:3000/api/products/" + productId)
       .then(function (res) {
         return res.json();
@@ -72,6 +72,63 @@ async function displayCart() {
       .then(function (response) {
         return response;
       });
+   }
+   displayCart();
+   // Items Quantity Changes
+function changeQuantity() {
+    const quantityInputs = document.querySelectorAll(".itemQuantity");
+    quantityInputs.forEach((quantityInput) => {
+      quantityInput.addEventListener("change", (event) => {
+        event.preventDefault();
+        const inputValue = event.target.value;
+        const dataId = event.target.getAttribute("data-id");
+        const dataColor = event.target.getAttribute("data-color");
+        let cartItems = localStorage.getItem("cartItems");
+        let items = JSON.parse(cartItems);
+  
+        items = items.map((item, index) => {
+          if (item.id === dataId && item.color === dataColor) {
+            item.quantity = inputValue;
+          }
+          return item;
+        });
+  
+        if (inputValue > 100) {
+          alert("La quantité maximale autorisée est de 100");
+          location.reload();
+          return;
+        }
+        let itemsStr = JSON.stringify(items);
+        localStorage.setItem("cartItems", itemsStr);
+        location.reload();
+      });
+    });
   }
-  displayCart();
+  
+  // Remove An item From The Cart
+  function deleteItem() {
+    const deleteButtons = document.querySelectorAll(".deleteItem");
+    deleteButtons.forEach((deleteButton) => {
+      deleteButton.addEventListener("click", (event) => {
+        event.preventDefault();
+        const deleteId = event.target.getAttribute("data-id");
+        const deleteColor = event.target.getAttribute("data-color");
+        itemsInLocalStorage = itemsInLocalStorage.filter(
+          (element) => !(element.id == deleteId && element.color == deleteColor)
+        );
+        console.log(itemsInLocalStorage);
+        deleteConfirm = window.confirm(
+          "Etes vous sûr de vouloir supprimer cet article ?"
+        );
+        if (deleteConfirm == true) {
+          localStorage.setItem("cartItems", JSON.stringify(itemsInLocalStorage));
+          location.reload();
+          alert("l'article a été supprimé avec succès");
+        }
+      });
+    });
+  }
+
+    
+
   
