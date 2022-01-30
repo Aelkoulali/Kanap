@@ -129,6 +129,138 @@ function changeQuantity() {
     });
   }
 
-    
+//----------------- Form Validation Using Regex----------------------//
+
+// Regular Expressions Variables
+let nameRegex = /^[a-zA-Z\-çñàéèêëïîôüù ]{2,}$/;
+let addressRegex = /^[0-9a-zA-Z\s,.'-çñàéèêëïîôüù]{3,}$/;
+let emailRegex = /^[A-Za-z0-9\-\.]+@([A-Za-z0-9\-]+\.)+[A-Za-z0-9-]{2,4}$/;
+
+// Regular Expressions Variables To Get form Fields By Id
+const firstName = document.getElementById("firstName");
+const lastName = document.getElementById("lastName");
+const address = document.getElementById("address");
+const city = document.getElementById("city");
+const email = document.getElementById("email");
+
+// First Name Field Validation
+firstName.addEventListener("input", (event) => {
+  event.preventDefault();
+  if (nameRegex.test(firstName.value) == false || firstName.value == "") {
+    document.getElementById("firstNameErrorMsg").innerHTML = "Champ non valide";
+    return false;
+  } else {
+    document.getElementById("firstNameErrorMsg").innerHTML = "";
+    return true;
+  }
+});
+
+// Last Name Field Validation
+lastName.addEventListener("input", (event) => {
+  event.preventDefault();
+  if (nameRegex.test(lastName.value) == false || lastName.value == "") {
+    document.getElementById("lastNameErrorMsg").innerHTML = "Champ non valide";
+    return false;
+  } else {
+    document.getElementById("lastNameErrorMsg").innerHTML = "";
+    return true;
+  }
+});
+
+// Address Field Validation
+address.addEventListener("input", (event) => {
+  event.preventDefault();
+  if (addressRegex.test(address.value) == false || address.value == "") {
+    document.getElementById("addressErrorMsg").innerHTML = "Champ non valide";
+    return false;
+  } else {
+    document.getElementById("addressErrorMsg").innerHTML = "";
+    return true;
+  }
+});
+
+// City Field Validation
+city.addEventListener("input", (event) => {
+  event.preventDefault();
+  if (nameRegex.test(city.value) == false || city.value == "") {
+    document.getElementById("cityErrorMsg").innerHTML = "Champ non valide";
+    return false;
+  } else {
+    document.getElementById("cityErrorMsg").innerHTML = "";
+    return true;
+  }
+});
+
+// E-mail Field Validation
+email.addEventListener("input", (event) => {
+  event.preventDefault();
+  if (emailRegex.test(email.value) == false || email.value == "") {
+    document.getElementById("emailErrorMsg").innerHTML = "Champ non valide";
+    return false;
+  } else {
+    document.getElementById("emailErrorMsg").innerHTML = "";
+    return true;
+  }
+});
+
+let order = document.getElementById("order");
+order.addEventListener("click", (e) => {
+  e.preventDefault();
+  // Create An Array To Get User Personnal Informations
+  let contact = {
+    firstName: firstName.value,
+    lastName: lastName.value,
+    address: address.value,
+    city: city.value,
+    email: email.value,
+  };
+
+  if (
+    firstName.value === "" ||
+    lastName.value === "" ||
+    address.value === "" ||
+    city.value === "" ||
+    email.value === ""
+  ) {
+    alert("Veuillez compléter le formulaire afin de valider votre commande !");
+  } else if (
+    nameRegex.test(firstName.value) == false ||
+    nameRegex.test(lastName.value) == false ||
+    addressRegex.test(address.value) == false ||
+    nameRegex.test(city.value) == false ||
+    emailRegex.test(email.value) == false
+  ) {
+    alert("Veuillez Utiliser des données valables !");
+  } else {
+    let products = [];
+    itemsInLocalStorage.forEach((order) => {
+      products.push(order.id);
+    });
+
+    let pageOrder = { contact, products };
+
+    // Order API Call To Send All Arrays
+    fetch("http://localhost:3000/api/products/order", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json",
+      },
+      body: JSON.stringify(pageOrder),
+    })
+      .then((res) => {
+        return res.json();
+      })
+      .then((confirm) => {
+        window.location.href = "./confirmation.html?orderId=" + confirm.orderId;
+        localStorage.clear();
+      })
+      .catch((error) => {
+        console.log("une erreur est survenue");
+      });
+  }
+});
+
+  
 
   
