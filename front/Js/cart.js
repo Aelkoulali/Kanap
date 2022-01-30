@@ -206,7 +206,8 @@ email.addEventListener("input", (event) => {
 let order = document.getElementById("order");
 order.addEventListener("click", (e) => {
   e.preventDefault();
-  // Create An Array To Get User Personnal Informations
+
+// Create An Array To Get User Personnal Informations
   let contact = {
     firstName: firstName.value,
     lastName: lastName.value,

@@ -42,7 +42,6 @@ function addToCart(productItem) {
   }
 }
 
-
 // Get Products 
 function displayProduct() {
     fetch("http://localhost:3000/api/products/" + productId)
@@ -103,6 +102,7 @@ function displayProduct() {
       alert("La quantité maximale autorisée est de 100");
       return;
     }
+    
     // Build An Array Contains Id, Color And Quantity Of The Added Product
     const productOptions = {
       id: productId,
