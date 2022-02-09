@@ -80,7 +80,7 @@ async function displayCart() {
        quantityInputs.forEach((quantityInput) => {
        quantityInput.addEventListener("change", (event) => {
         event.preventDefault();
-        const inputValue = event.target.value;
+        const inputValue = event.target.value - 0;
         const dataId = event.target.getAttribute("data-id");
         const dataColor = event.target.getAttribute("data-color");
         let cartItems = localStorage.getItem("cartItems");
