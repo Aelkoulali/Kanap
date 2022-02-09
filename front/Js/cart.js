@@ -75,10 +75,10 @@ async function displayCart() {
    }
    displayCart();
    // Items Quantity Changes
-function changeQuantity() {
-    const quantityInputs = document.querySelectorAll(".itemQuantity");
-    quantityInputs.forEach((quantityInput) => {
-      quantityInput.addEventListener("change", (event) => {
+  function changeQuantity() { 
+      const quantityInputs = document.querySelectorAll(".itemQuantity");
+       quantityInputs.forEach((quantityInput) => {
+       quantityInput.addEventListener("change", (event) => {
         event.preventDefault();
         const inputValue = event.target.value;
         const dataId = event.target.getAttribute("data-id");
