@@ -1,5 +1,6 @@
 # Kanap #
-![logo](https://user-images.githubusercontent.com/77611825/167658172-d17ab94a-5991-4c8a-bf53-bff7778a41dd.png)
+
+![Kanap](https://user-images.githubusercontent.com/77611825/167658527-0cc652d4-358b-445f-b8a7-ac38be396c33.png)
 
 This is the front end and back end server for Project 5 of the Web Developer path.
 
