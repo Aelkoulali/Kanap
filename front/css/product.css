@@ -1,6 +1,6 @@
-/*********/
+
 /*Product*/
-/*********/
+
 
 /*Item Details*/
 .item {
@@ -95,9 +95,9 @@
 
 
 
-/***************/
+
 /*Media queries*/
-/***************/
+
 
 @media (max-width: 991.98px) {
 	.item article {
