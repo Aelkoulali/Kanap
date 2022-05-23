@@ -1,6 +1,5 @@
-/*********/
+
 /*GENERAL*/
-/*********/
 
 body {
 	font-family: 'Montserrat', sans-serif;
@@ -48,9 +47,8 @@ h2 {
 
 
 
-/********/
 /*Header*/
-/********/
+
 
 /*informations*/
 .informations {
@@ -113,12 +111,8 @@ h2 {
 	display: flex;
 }
 
-
-
-
-/******/
 /*Main*/
-/******/
+
 
 main {
 	background-color: var(--main-color);
@@ -176,11 +170,8 @@ main {
 }
 
 
-
-
-/********/
 /*Footer*/
-/********/
+
 
 footer {
 	color: var(--footer-text-color);
@@ -214,11 +205,7 @@ footer .footerSecondary {
 }
 
 
-
-
-/***************/
 /*Media queries*/
-/***************/
 
 @media (max-width: 991.98px) {
 	.informations ul {
