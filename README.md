@@ -2,13 +2,11 @@
 
 ![Kanap](https://user-images.githubusercontent.com/77611825/167658527-0cc652d4-358b-445f-b8a7-ac38be396c33.png)
 
-This is the front end and back end server for Project 5 of the Web Developer path.
-
-## Back end Prerequisites : 
+## Back End Prerequisites : 
 
 You will need to have Node and `npm` installed locally on your machine.
 
-## Back end Installation : 
+## Back End Installation : 
 
 ### Clone this repo. From the "back" folder of the project, run `npm install`.
 ### You can then run the server with `node server`. 
