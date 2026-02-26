@@ -4,8 +4,7 @@
 ## ✅ JavaScript + HTML + CSS
 ## ✅ Form validation
 ## ✅ Cart
-## ✅ E-Commerce Project
-## ✅ JavaScript + HTML + CSS
+## ✅ User interface
 ![Kanap](https://user-images.githubusercontent.com/77611825/167658527-0cc652d4-358b-445f-b8a7-ac38be396c33.png)
 
 ## ➡️ Back End Prerequisites : 
