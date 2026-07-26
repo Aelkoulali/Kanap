@@ -3,9 +3,9 @@ Kanap is an E-commerce web application using Javascript Html and CSS
 
 ## 💡 Skills
 - Form validation
-- 
--
-- 
+- Cart
+- User interface
+- LocalStorage
 
 ## 🛠️ Tech Stack
 - HTML
