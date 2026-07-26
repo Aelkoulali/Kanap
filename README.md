@@ -1,5 +1,5 @@
 # 🗂️ Kanap 🛋️
-Kanap is an E-commerce web application using Javascript Html and CSS, focus on form validation and cart managment.
+Kanap is a modern e-commerce web application built with JavaScript, HTML, and CSS. The project focuses on two core features: efficient cart management and reliable form validation. Users can browse products, add items to the cart, adjust quantities, and see totals updated dynamically. At the same time, the checkout form includes validation rules to ensure the entered information is correct before submission, providing clear feedback to the user and preventing invalid data from being processed.
 
 ## 💡 Skills
 - Form validation
