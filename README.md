@@ -1,5 +1,8 @@
 # 🗂️ Kanap 🛋️
 Kanap is an E-commerce web application using Javascript Html and CSS
+
+## 💡 Skills
+
 ## ➡️ Key Concepts :
 ## ✅ E-Commerce Project
 ## ✅ JavaScript + HTML + CSS
